@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manuale Utente - 001 Attivazione Personale, Mezzi e Materiali</title>
+    <style>
+        :root {
+            --primary-color: #ff3300;
+            --secondary-color: #9a5151;
+            --dark-color: #34495e;
+            --light-color: #ecf0f1;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --section-padding: 2rem;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem var(--section-padding);
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background-color: white;
+            position: sticky;
+            top: 0;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 var(--section-padding);
+        }
+        
+        .logo {
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1.4rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--section-padding);
+        }
+        
+        section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light-color);
+        }
+        
+        h3 {
+            margin: 1.5rem 0 1rem;
+            color: var(--dark-color);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        li{
+            margin-left: 32px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            background-color: var(--light-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+        
+        .feature-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+        
+        .steps {
+            list-style: none;
+            counter-reset: step-counter;
+        }
+        
+        .steps li {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .steps li::before {
+            content: counter(step-counter);
+            counter-increment: step-counter;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: var(--primary-color);
+            color: white;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .troubleshooting {
+            margin-top: 2rem;
+        }
+        
+        .problem {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .solution {
+            padding-left: 1rem;
+            border-left: 2px solid var(--secondary-color);
+            margin-left: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .tip {
+            background-color: rgba(46, 204, 113, 0.1);
+            border-left: 4px solid var(--secondary-color);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        
+        .warning {
+            background-color: rgba(231, 76, 60, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        
+        .screenshot {
+            max-width: 100%;
+            height: auto;
+            margin: 1.5rem 0;
+            border-radius: 6px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border: 1px solid #ddd;
+        }
+        
+        code {
+            background-color: #f8f9fa;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: monospace;
+            color: var(--accent-color);
+        }
+        
+        .code-block {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: var(--light-color);
+            font-weight: bold;
+        }
+        
+        tr:hover {
+            background-color: rgba(236, 240, 241, 0.5);
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 2rem var(--section-padding);
+            text-align: center;
+        }
+        
+        .footer-links {
+            margin-top: 1rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 0.5rem;
+            text-decoration: none;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Attivazione Web 001</h1>
+        <p class="subtitle">Manuale Utente In Linea</p>
+    </header>
+    
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Attivazione Web 001</a>
+            <ul class="nav-links">
+                <li><a href="#introduzione">Introduzione</a></li>
+                <li><a href="#accesso">Accesso</a></li>
+                <li><a href="#funzionalita">Funzionalità</a></li>
+                <li><a href="#guida">Guida d'uso</a></li>
+                <li><a href="#troubleshooting">Problemi</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main>
+        <section id="introduzione">
+            <h2>Introduzione</h2>
+            <p>Benvenuto in Attivazione Web 001, la soluzione web innovativa progettata per automatizzare e rendere omogenea la generazione delle comunicazioni di attivazione di personale, mezzi e materiali. Questa guida ti mostrerà tutte le funzionalità disponibili e ti aiuterà a sfruttare al massimo le potenzialità di questa applicazione.</p>
+            
+            <h3>Requisiti di sistema</h3>
+            <p>Per utilizzare Attivazione Web 001, assicurati di avere:</p>
+            <ul>
+                <li>Browser web aggiornato (Chrome, Firefox, Safari o Edge)</li>
+                <li>Connessione internet stabile</li>
+                <li>Risoluzione schermo consigliata di 1280 x 720 pixel</li>
+                <li>JavaScript abilitato</li>
+            </ul>
+            
+            <div class="tip">
+                <strong>Consiglio:</strong> Per le migliori prestazioni, raccomandiamo di utilizzare Google Chrome aggiornato all'ultima versione.
+            </div>
+        </section>
+        
+        <section id="accesso">
+            <h2>Accesso</h2>
+            <p>NomeApp è un'applicazione web, quindi non richiede installazione sul tuo dispositivo. Segui questi semplici passaggi per iniziare:</p>
+            
+            <ol class="steps">
+                <li>Apri il tuo browser web preferito</li>
+                <li>Vai all'indirizzo <code>https://www.nomeapp.com</code></li>
+                <li>Clicca su "Registrati" nell'angolo in alto a destra</li>
+                <li>Inserisci i tuoi dati personali nel modulo di registrazione</li>
+                <li>Verifica il tuo indirizzo email cliccando sul link ricevuto</li>
+                <li>Accedi con le tue credenziali e inizia a utilizzare NomeApp</li>
+            </ol>
+            
+            <div class="warning">
+                <strong>Attenzione:</strong> Utilizza una password sicura con almeno 8 caratteri, includendo lettere maiuscole, minuscole, numeri e simboli.
+            </div>
+            
+            <img src="400.png" alt="Schermata di login" class="screenshot">
+        </section>
+        
+        <section id="funzionalita">
+            <h2>Funzionalità Principali</h2>
+            <p>NomeApp offre una serie di potenti funzionalità progettate per [obiettivo dell'app]. Ecco una panoramica delle principali caratteristiche:</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-title">Dashboard Personalizzabile</div>
+                    <p>Organizza i widget e visualizza le informazioni più importanti in modo immediato.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-title">Gestione Progetti</div>
+                    <p>Crea, modifica e monitora i tuoi progetti in tempo reale con strumenti avanzati.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-title">Analisi Dati</div>
+                    <p>Visualizza report dettagliati e grafici interattivi per prendere decisioni informate.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-title">Collaborazione in Tempo Reale</div>
+                    <p>Lavora con il tuo team simultaneamente su documenti e progetti condivisi.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-title">Notifiche Intelligenti</div>
+                    <p>Ricevi aggiornamenti personalizzati sulle attività più rilevanti per te.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-title">Integrazione API</div>
+                    <p>Connetti NomeApp con altri strumenti e servizi che utilizzi quotidianamente.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="guida">
+            <h2>Guida d'uso</h2>
+            
+            <h3>Navigazione dell'interfaccia</h3>
+            <p>L'interfaccia di NomeApp è stata progettata per essere intuitiva e facile da navigare:</p>
+            <ul>
+                <li><strong>Menu principale:</strong> situato nella barra laterale sinistra, consente l'accesso a tutte le sezioni principali dell'applicazione</li>
+                <li><strong>Barra superiore:</strong> contiene notifiche, accesso rapido alle impostazioni e menu utente</li>
+                <li><strong>Area di lavoro:</strong> la parte centrale dello schermo dove vengono visualizzati contenuti e strumenti</li>
+            </ul>
+            
+            <img src="500.png" alt="Interfaccia principale" class="screenshot">
+            
+            <h3>Creazione di un nuovo progetto</h3>
+            <ol class="steps">
+                <li>Dalla dashboard, clicca sul pulsante "+ Nuovo Progetto"</li>
+                <li>Compila il modulo con nome del progetto, descrizione e data di scadenza</li>
+                <li>Seleziona i membri del team da coinvolgere</li>
+                <li>Scegli un template o inizia da zero</li>
+                <li>Clicca su "Crea" per iniziare a lavorare sul progetto</li>
+            </ol>
+            
+            <div class="code-block">
+                <pre>// Esempio di configurazione JSON per un nuovo progetto
+{
+  "nome": "Lancio Prodotto Q1",
+  "descrizione": "Pianificazione e implementazione del lancio prodotto",
+  "scadenza": "2025-06-30",
+  "membri": ["user1@example.com", "user2@example.com"],
+  "template": "lancio_prodotto",
+  "priorita": "alta"
+}</pre>
+            </div>
+            
+            <h3>Personalizzazione della dashboard</h3>
+            <p>Puoi personalizzare la tua dashboard per visualizzare le informazioni più rilevanti per il tuo lavoro:</p>
+            <ol class="steps">
+                <li>Clicca sull'icona "Impostazioni" nell'angolo superiore destro della dashboard</li>
+                <li>Seleziona "Personalizza Dashboard"</li>
+                <li>Trascina i widget disponibili nella posizione desiderata</li>
+                <li>Ridimensiona i widget secondo le tue preferenze</li>
+                <li>Clicca su "Salva configurazione" per applicare le modifiche</li>
+            </ol>
+            
+            <div class="tip">
+                <strong>Consiglio:</strong> Puoi creare diverse configurazioni di dashboard per diversi casi d'uso e passare rapidamente dall'una all'altra.
+            </div>
+        </section>
+        
+        <section id="troubleshooting">
+            <h2>Risoluzione dei problemi</h2>
+            <p>Ecco alcune soluzioni ai problemi più comuni che potresti incontrare mentre utilizzi NomeApp:</p>
+            
+            <div class="troubleshooting">
+                <div class="problem">
+                    <strong>Problema:</strong> Impossibile accedere all'account
+                </div>
+                <div class="solution">
+                    <strong>Soluzione:</strong>
+                    <ol>
+                        <li>Verifica che le credenziali di accesso siano corrette</li>
+                        <li>Controlla la connessione internet</li>
+                        <li>Pulisci la cache del browser</li>
+                        <li>Utilizza la funzione "Password dimenticata" se necessario</li>
+                        <li>Se il problema persiste, contatta il supporto tecnico</li>
+                    </ol>
+                </div>
+                
+                <div class="problem">
+                    <strong>Problema:</strong> L'applicazione è lenta o non risponde
+                </div>
+                <div class="solution">
+                    <strong>Soluzione:</strong>
+                    <ol>
+                        <li>Ricarica la pagina (F5)</li>
+                        <li>Chiudi altre schede o applicazioni che consumano memoria</li>
+                        <li>Verifica la velocità della tua connessione internet</li>
+                        <li>Prova ad accedere da un browser diverso</li>
+                        <li>Disabilita temporaneamente le estensioni del browser</li>
+                    </ol>
+                </div>
+                
+                <div class="problem">
+                    <strong>Problema:</strong> I grafici non vengono visualizzati correttamente
+                </div>
+                <div class="solution">
+                    <strong>Soluzione:</strong>
+                    <ol>
+                        <li>Assicurati che JavaScript sia abilitato nel tuo browser</li>
+                        <li>Aggiorna il browser all'ultima versione</li>
+                        <li>Prova a modificare le impostazioni di zoom (Ctrl/Cmd + / -)</li>
+                        <li>Svuota la cache del browser e ricarica la pagina</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <p>Se riscontri problemi non elencati qui, consulta la nostra <a href="#">knowledge base</a> o contatta il team di supporto all'indirizzo <code>supporto@nomeapp.com</code>.</p>
+        </section>
+        
+        <section id="faq">
+            <h2>Domande Frequenti (FAQ)</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Come posso modificare le impostazioni del mio account?</div>
+                <p>Per modificare le impostazioni del tuo account, clicca sul tuo avatar nell'angolo superiore destro, seleziona "Impostazioni account" e potrai modificare informazioni personali, preferenze di notifica e opzioni di sicurezza.</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">È possibile lavorare offline con NomeApp?</div>
+                <p>NomeApp richiede una connessione internet per la maggior parte delle funzionalità. Tuttavia, alcune attività di base possono essere svolte offline e sincronizzate automaticamente quando la connessione viene ripristinata.</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Come posso condividere un progetto con utenti esterni?</div>
+                <p>Per condividere un progetto con utenti esterni, vai alla pagina del progetto, clicca su "Condividi", seleziona "Utenti esterni" e inserisci gli indirizzi email. Puoi impostare livelli di accesso diversi per ogni utente invitato.</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">NomeApp è disponibile come applicazione mobile?</div>
+                <p>Sì, NomeApp è disponibile sia per dispositivi iOS che Android. Puoi scaricare l'app dai rispettivi app store. L'applicazione mobile offre la maggior parte delle funzionalità della versione web con un'interfaccia ottimizzata per dispositivi touch.</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Come posso esportare i dati dalla piattaforma?</div>
+                <p>Per esportare i dati, vai alla sezione "Impostazioni", seleziona "Esportazione dati" e scegli il formato desiderato (CSV, Excel, PDF). Puoi selezionare quali dati esportare e personalizzare il report secondo le tue esigenze.</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Quali sono i livelli di abbonamento disponibili?</div>
+                <p>NomeApp offre tre livelli di abbonamento: Basic (gratuito), Professional (€X/mese) e Enterprise (personalizzato). Ogni livello offre funzionalità differenti in termini di capacità di archiviazione, numero di progetti e utenti, e opzioni avanzate. Visita la pagina dei prezzi per maggiori dettagli.</p>
+            </div>
+        </section>
+        
+        <section id="shortcuts">
+            <h2>Scorciatoie da tastiera</h2>
+            <p>Utilizza queste scorciatoie da tastiera per lavorare più velocemente con NomeApp:</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Scorciatoia</th>
+                        <th>Funzione</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>Ctrl/Cmd + N</code></td>
+                        <td>Nuovo progetto</td>
+                    </tr>
+                    <tr>
+                        <td><code>Ctrl/Cmd + S</code></td>
+                        <td>Salva modifiche</td>
+                    </tr>
+                    <tr>
+                        <td><code>Ctrl/Cmd + F</code></td>
+                        <td>Ricerca</td>
+                    </tr>
+                    <tr>
+                        <td><code>Ctrl/Cmd + P</code></td>
+                        <td>Stampa/Esporta come PDF</td>
+                    </tr>
+                    <tr>
+                        <td><code>Ctrl/Cmd + H</code></td>
+                        <td>Mostra/nascondi barra laterale</td>
+                    </tr>
+                    <tr>
+                        <td><code>Ctrl/Cmd + /</code></td>
+                        <td>Elenco completo scorciatoie</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 NomeApp. Tutti i diritti riservati.</p>
+        <div class="footer-links">
+            <a href="#">Termini di servizio</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Supporto</a>
+            <a href="#">Contatti</a>
+        </div>
+    </footer>
+</body>
+</html>
